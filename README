@@ -1,0 +1,54 @@
+NAME
+    MooseX::AbstractMethod - Declare methods requirements that must be
+    satisfied
+
+VERSION
+    version 0.001
+
+SYNOPSIS
+        use Moose;
+        use MooseX::Abstract;
+
+        requires 'bar';
+
+        # synonm to 'requires'
+        abstract 'foo';
+
+DESCRIPTION
+    This extensions allows classes to flag certain methods as being required
+    to be implemented by a subclass, much as a Moose::Role does with
+    'requires'.
+
+USAGE
+    As in the synopsis, simply mark certain methods as being required by
+    subclasses by passing their names to "abstract" or "requires". This will
+    cause a method of the same name to be installed in the class that will
+    die horribly if it's ever called. Additionally, when a class is made
+    immutable, all of its methods are checked to see if they're marked as
+    abstract; if any abstract methods exists that were not created in the
+    current class, we die horribly.
+
+    Checking for method satisfaction on make_immutable isn't perfect, but
+    AFAICT it's the most reasonable approach possible at the moment.
+    (Corrections welcome.)
+
+SEE ALSO
+BUGS
+    All complex software has bugs lurking in it, and this module is no
+    exception.
+
+    Bugs, feature requests and pull requests through GitHub are most
+    welcome; our page and repo (same URI):
+
+        https://github.com/RsrchBoy/moosex::abstractmethod
+
+AUTHOR
+    Chris Weyl <cweyl@alumni.drew.edu>
+
+COPYRIGHT AND LICENSE
+    This software is Copyright (c) 2011 by Chris Weyl.
+
+    This is free software, licensed under:
+
+      The GNU Lesser General Public License, Version 2.1, February 1999
+
