@@ -9,7 +9,7 @@
 #
 package MooseX::AbstractMethod;
 {
-  $MooseX::AbstractMethod::VERSION = '0.001';
+  $MooseX::AbstractMethod::VERSION = '0.002';
 }
 
 # ABSTRACT: Declare methods requirements that must be satisfied
@@ -22,7 +22,7 @@ use Moose::Util::MetaRole;
 {
     package MooseX::AbstractMethod::Trait::Class;
 {
-  $MooseX::AbstractMethod::Trait::Class::VERSION = '0.001';
+  $MooseX::AbstractMethod::Trait::Class::VERSION = '0.002';
 }
     use Moose::Role;
     use namespace::autoclean;
@@ -87,7 +87,7 @@ use Moose::Util::MetaRole;
 {
     package MooseX::AbstractMethod::Trait::Method;
 {
-  $MooseX::AbstractMethod::Trait::Method::VERSION = '0.001';
+  $MooseX::AbstractMethod::Trait::Method::VERSION = '0.002';
 }
     use Moose::Role;
     use namespace::autoclean;
@@ -124,7 +124,7 @@ MooseX::AbstractMethod - Declare methods requirements that must be satisfied
 
 =head1 VERSION
 
-version 0.001
+version 0.002
 
 =head1 SYNOPSIS
 
@@ -155,6 +155,19 @@ Checking for method satisfaction on make_immutable isn't perfect, but AFAICT
 it's the most reasonable approach possible at the moment.  (Corrections
 welcome.)
 
+=head1 NEW SUGAR
+
+=head2 abstract
+
+abstract() allows one to declare a method dependency that must be satisfied by a
+subclass before it is invoked, and before the subclass is made immutable.
+
+    abstract 'method_name_that_must_be_satisfied';
+
+=head2 requires
+
+requires() is a synonym for abstract() and works in the way you'd expect.
+
 =head1 SEE ALSO
 
 =head1 BUGS
@@ -164,7 +177,7 @@ All complex software has bugs lurking in it, and this module is no exception.
 Bugs, feature requests and pull requests through GitHub are most welcome; our
 page and repo (same URI):
 
-    https://github.com/RsrchBoy/moosex::abstractmethod
+    https://github.com/RsrchBoy/moosex-abstractmethod
 
 =head1 AUTHOR
 

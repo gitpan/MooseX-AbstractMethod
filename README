@@ -3,7 +3,7 @@ NAME
     satisfied
 
 VERSION
-    version 0.001
+    version 0.002
 
 SYNOPSIS
         use Moose;
@@ -32,6 +32,18 @@ USAGE
     AFAICT it's the most reasonable approach possible at the moment.
     (Corrections welcome.)
 
+NEW SUGAR
+  abstract
+    abstract() allows one to declare a method dependency that must be
+    satisfied by a subclass before it is invoked, and before the subclass is
+    made immutable.
+
+        abstract 'method_name_that_must_be_satisfied';
+
+  requires
+    requires() is a synonym for abstract() and works in the way you'd
+    expect.
+
 SEE ALSO
 BUGS
     All complex software has bugs lurking in it, and this module is no
@@ -40,7 +52,7 @@ BUGS
     Bugs, feature requests and pull requests through GitHub are most
     welcome; our page and repo (same URI):
 
-        https://github.com/RsrchBoy/moosex::abstractmethod
+        https://github.com/RsrchBoy/moosex-abstractmethod
 
 AUTHOR
     Chris Weyl <cweyl@alumni.drew.edu>
