@@ -21,4 +21,5 @@ t/release-no-tabs.t
 t/release-pod-coverage.t
 t/release-pod-syntax.t
 t/release-portability.t
+t/role.t
 t/sanity_check.t

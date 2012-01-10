@@ -14,6 +14,7 @@ my %WriteMakefileArgs = (
   "BUILD_REQUIRES" => {
     "File::Find" => 0,
     "File::Temp" => 0,
+    "MooseX::Traits" => 0,
     "Test::Fatal" => 0,
     "Test::Moose" => 0,
     "Test::More" => "0.88",
@@ -36,7 +37,7 @@ my %WriteMakefileArgs = (
     "Moose::Util::MetaRole" => 0,
     "namespace::autoclean" => 0
   },
-  "VERSION" => "0.002",
+  "VERSION" => "0.003",
   "test" => {
     "TESTS" => "t/*.t"
   }

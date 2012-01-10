@@ -9,7 +9,7 @@
 #
 package MooseX::AbstractMethod;
 {
-  $MooseX::AbstractMethod::VERSION = '0.002';
+  $MooseX::AbstractMethod::VERSION = '0.003';
 }
 
 # ABSTRACT: Declare methods requirements that must be satisfied
@@ -19,10 +19,13 @@ use namespace::autoclean;
 use Moose::Exporter;
 use Moose::Util::MetaRole;
 
+# debugging...
+#use Smart::Comments;
+
 {
     package MooseX::AbstractMethod::Trait::Class;
 {
-  $MooseX::AbstractMethod::Trait::Class::VERSION = '0.002';
+  $MooseX::AbstractMethod::Trait::Class::VERSION = '0.003';
 }
     use Moose::Role;
     use namespace::autoclean;
@@ -87,7 +90,7 @@ use Moose::Util::MetaRole;
 {
     package MooseX::AbstractMethod::Trait::Method;
 {
-  $MooseX::AbstractMethod::Trait::Method::VERSION = '0.002';
+  $MooseX::AbstractMethod::Trait::Method::VERSION = '0.003';
 }
     use Moose::Role;
     use namespace::autoclean;
@@ -98,8 +101,14 @@ use Moose::Util::MetaRole;
 sub abstract { _abstract(@_) }
 sub requires { _abstract(@_) }
 
-#sub _abstract { $_[0]->add_abstract_method($_[1] => $_[0]->name) }
-sub _abstract { shift->add_abstract_method(@_) }
+sub _abstract {
+
+    ### meta isa: ref $_[0]
+    return shift->add_abstract_method(@_)
+        unless $_[0]->isa('Moose::Meta::Role');
+
+    goto \&Moose::Role::requires;
+}
 
 Moose::Exporter->setup_import_methods(
     with_meta => [ qw{ abstract requires } ],
@@ -124,7 +133,7 @@ MooseX::AbstractMethod - Declare methods requirements that must be satisfied
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 SYNOPSIS
 
