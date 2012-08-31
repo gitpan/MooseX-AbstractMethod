@@ -9,7 +9,7 @@
 #
 package MooseX::AbstractMethod;
 {
-  $MooseX::AbstractMethod::VERSION = '0.003';
+  $MooseX::AbstractMethod::VERSION = '0.004';
 }
 
 # ABSTRACT: Declare methods requirements that must be satisfied
@@ -25,7 +25,7 @@ use Moose::Util::MetaRole;
 {
     package MooseX::AbstractMethod::Trait::Class;
 {
-  $MooseX::AbstractMethod::Trait::Class::VERSION = '0.003';
+  $MooseX::AbstractMethod::Trait::Class::VERSION = '0.004';
 }
     use Moose::Role;
     use namespace::autoclean;
@@ -90,7 +90,7 @@ use Moose::Util::MetaRole;
 {
     package MooseX::AbstractMethod::Trait::Method;
 {
-  $MooseX::AbstractMethod::Trait::Method::VERSION = '0.003';
+  $MooseX::AbstractMethod::Trait::Method::VERSION = '0.004';
 }
     use Moose::Role;
     use namespace::autoclean;
@@ -123,9 +123,13 @@ Moose::Exporter->setup_import_methods(
 
 !!42;
 
-
+__END__
 
 =pod
+
+=encoding utf-8
+
+=for :stopwords Chris Weyl
 
 =head1 NAME
 
@@ -133,7 +137,7 @@ MooseX::AbstractMethod - Declare methods requirements that must be satisfied
 
 =head1 VERSION
 
-version 0.003
+This document describes version 0.004 of MooseX::AbstractMethod - released August 31, 2012 as part of MooseX-AbstractMethod.
 
 =head1 SYNOPSIS
 
@@ -177,16 +181,19 @@ subclass before it is invoked, and before the subclass is made immutable.
 
 requires() is a synonym for abstract() and works in the way you'd expect.
 
-=head1 SEE ALSO
+=head1 SOURCE
+
+The development version is on github at L<http://github.com/RsrchBoy/moosex-abstractmethod>
+and may be cloned from L<git://github.com/RsrchBoy/moosex-abstractmethod.git>
 
 =head1 BUGS
 
-All complex software has bugs lurking in it, and this module is no exception.
+Please report any bugs or feature requests on the bugtracker website
+https://github.com/RsrchBoy/moosex-abstractmethod/issues
 
-Bugs, feature requests and pull requests through GitHub are most welcome; our
-page and repo (same URI):
-
-    https://github.com/RsrchBoy/moosex-abstractmethod
+When submitting a bug or request, please include a test-file or a
+patch to an existing test-file that illustrates the bug or desired
+feature.
 
 =head1 AUTHOR
 
@@ -201,7 +208,3 @@ This is free software, licensed under:
   The GNU Lesser General Public License, Version 2.1, February 1999
 
 =cut
-
-
-__END__
-

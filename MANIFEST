@@ -6,12 +6,14 @@ META.json
 META.yml
 Makefile.PL
 README
+SIGNATURE
 dist.ini
 lib/MooseX/AbstractMethod.pm
 t/00-compile.t
 t/000-load.t
 t/000-report-versions-tiny.t
 t/accessor_satisfaction.t
+t/author-pod-spell.t
 t/basic.t
 t/release-consistent-version.t
 t/release-eol.t
